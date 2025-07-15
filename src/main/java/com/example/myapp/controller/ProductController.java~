@@ -1,0 +1,19 @@
+package com.example.myapp.controller;
+
+import com.example.myapp.model.Product;
+import com.example.myapp.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/products")
+public class ProductController {
+
+    @Autowired
+    private ProductRepository repository;
+
+    @PostMapping
+    public Product createProduct(@RequestBody Product product) {
+        return repository.save(product);
+    }
+}
