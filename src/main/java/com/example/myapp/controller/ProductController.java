@@ -37,9 +37,9 @@ public class ProductController {
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
 	if (repository.existsById(id)) {
 	    repository.deleteById(id);
-	    return ResponseEntity.noContent().build(); // 204 No Content
+	    return ResponseEntity.noContent().build(); 
 	} else {
-	    return ResponseEntity.notFound().build();  // 404 Not Found
+	    return ResponseEntity.notFound().build(); 
 	}
     }
 
